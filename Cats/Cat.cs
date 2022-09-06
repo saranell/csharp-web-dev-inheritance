@@ -7,14 +7,18 @@ namespace Cats
         public bool Tired { get; set; } = false;
         public bool Hungry { get; set; } = false;
         public double Weight { get; set; }
-        public string Family { get; } = "Felidae";
+        public string Family { get; } = "Felidae"; //no setter means this value cannot be changed by any subclass e.g. HouseCat
 
         public Cat(double weight)
         {
             Weight = weight;
         }
 
-        // On this line, add a no-argument constructor
+        // To add a no-argument constructor:
+        public Cat()
+        {
+            Weight = 13.0;
+        }
 
         public void Sleep()
         {
@@ -39,4 +43,3 @@ namespace Cats
 
     }
 }
-//first commit test

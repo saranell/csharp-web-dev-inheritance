@@ -7,13 +7,22 @@ namespace Cats
         public string Name { get; set; }
         public string Species { get; } = "Felis catus";
 
-
-        public HouseCat(string name, double weight) : base(weight)
+        //To use a Cat constructor for HouseCat, we must provide it (doesn't inherit constructors from Cat class):
+        public HouseCat(string name, double weight) : base(weight) // the call to the base class must be on the constructor signature
         {
-            Name = name;
+        // ": base(weight)" allows this constructor to extend the Cat class constructor that takes a weight parameter 
+
+            Name = name; //Setting the value for the name
         }
 
-        // On this line, write a constructor that uses the no-arg constructor in the Cat class.
+        // On the next line, write a constructor that uses the no-arg constructor in the Cat class.
+        public HouseCat(string name)
+        {
+            Name = name;
+            //By doing this, we can initialize a new HouseCat with just the name field
+        }
+        
+
 
         public bool IsSatisfied()
         {
